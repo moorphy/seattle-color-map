@@ -1,0 +1,635 @@
+@charset "UTF-8";
+/*  
+Theme Name: Seattle Color Map
+Description: 2015 WP Theme created for WEB170 at Seattle Central College. 
+Version: 1.0
+Author: Mike Murphy
+Author URI: http://moorphy.com/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: seattlecolormap
+
+This theme, like WordPress, is licensed under the GPL.
+Used Tabula Rasa by Raven Gildea as a Template.
+Thanks Raven!
+
+*/
+  
+  
+/*Fonts used and downloaded from Font Squirrel. Thanks FS!*/
+@font-face {
+    font-family: 'hammersmith_oneregular';
+    src: url('fonts/hammersmith_oneregular-webfont.eot');
+    src: url('fonts/hammersmithone-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/hammersmithone-webfont.woff2') format('woff2'),
+         url('fonts/hammersmithone-webfont.woff') format('woff'),
+         url('fonts/hammersmithone-webfont.ttf') format('truetype'),
+         url('fonts/hammersmithone-webfont.svg#hammersmith_oneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+@font-face {
+    font-family: 'carter_oneregular';
+    src: url('fonts/carterone-webfont.eot');
+    src: url('fonts/carterone-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/carterone-webfont.woff2') format('woff2'),
+         url('fonts/carterone-webfont.woff') format('woff'),
+         url('fonts/carterone-webfont.ttf') format('truetype'),
+         url('fonts/carterone-webfont.svg#carter_oneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'sedgwick_co';
+    src: url('fonts/sedgwick_co-webfont.eot');
+    src: url('fonts/sedgwick_co-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sedgwick_co-webfont.woff2') format('woff2'),
+         url('fonts/sedgwick_co-webfont.woff') format('woff'),
+         url('fonts/sedgwick_co-webfont.ttf') format('truetype'),
+         url('fonts/sedgwick_co-webfont.svg#carter_oneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* UNIVERSAL SELECTOR/SELECT BODY*/
+* {
+  margin: 0;
+  padding: 0;  
+}
+body, body * {
+   margin: 0;
+   padding: 0;
+   font-size: 100%;
+   line-height: 1.6;
+}
+
+body{
+    background-image:url(images/color.png), url(images/map.jpg);
+    background-repeat:repeat, no-repeat;   
+}
+
+#wrapper {
+	width:80%;
+	margin:0 auto;
+	overflow: hidden;		
+}
+
+/*A TAGS*/
+a:link, a:visited {
+	color: #3C3C3C;  
+	}
+		
+h2 a{
+    line-height: 1.25em;
+	color: #333;
+	}
+
+header{
+	width:90%;
+    margin: 0 auto;
+    clear:both;
+    overflow: hidden;
+}
+
+#logo  {
+    float:left;
+}
+#headright {
+    display:block;
+    float:right;
+    width:75%;
+    background: none;
+    text-align: right;
+}
+#sidebarlogo {
+    display:block;
+    width:15%;
+    margin-top: 2%;
+    float:left;
+}
+.bloginfo {
+    /*padding:85px 0 0 25px;*/
+    font-size: 4em;
+    color:white;
+    text-shadow:#000 2px 3px 2px;
+    text-decoration:none;
+}
+.description {
+    text-align:right;
+    margin-right: 15%;
+    color:white;
+    text-shadow:#000 2px 3px 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'sedgwick_co';
+    letter-spacing: .2px;
+	}
+h1 {
+    font-size: 3em;
+	}
+		
+h1 a:link, h1 a:visited {
+    color: #3C3C3C;
+    text-decoration: none;
+	}
+
+h1 a:hover, h1 a:focus {
+    color: #3C3C3C;
+    text-decoration: none;
+	}
+h1 span { 		
+   display:none;  
+}       
+
+h2 {
+    font-size: 2em;
+    line-height: 1.05em 
+}
+
+
+h3 {
+    font-size: 1.15em;  
+}
+h4 {
+    font-size: 1em; 
+    font-family: 'hammersmith_oneregular';
+}
+h5 {
+    font-size: .85em;
+    font-family: 'hammersmith_oneregular';
+}
+/*List Styles*/
+ol {
+    margin-left: 1.75em;
+    letter-spacing: .2px;   
+}
+li {
+    font-family: 'hammersmith_oneregular';
+    font-size: 16px;
+    letter-spacing: .2px;    
+}
+ul {
+    letter-spacing: .2px;
+    margin-left: 1.75em;  
+}
+p {
+    font-family:'carter_oneregular';
+    text-align:left;
+    padding:2px;
+    margin: 0 0 10px 0; 
+}
+
+/*MAIN NAVIGATION*/
+
+nav {
+    width:90%;
+    border:5px solid black; 
+    border-radius:15px;
+    background:rgba(255,255,255, 0.45);	
+    margin:0 auto 10px;
+    overflow: hidden;
+    text-shadow:#999999 2px 3px 2px;
+    height:50px;
+    display:block;
+    font-size:20px;
+    line-height:30px;
+    clear:both;
+}
+nav ul  {
+    text-align:center;
+    font-family: 'hammersmith_oneregular';
+    font-size: 1.1em;
+    padding-top: 5px;
+}
+nav ul li  {
+    display:inline;
+    width:19.5%;
+    float:left;
+    padding:0;
+}
+#top_nav ul li.big  {
+    font-family: 'hammersmith_oneregular';
+    font-size: 20px;
+    display:inline;
+}
+#top_nav ul li a, nav ul li.big a  {
+    color:black;
+    font-size: 1.25em;
+    text-decoration:none;
+    display:block;
+}
+nav ul li a:hover {
+    color:darkslategray;
+}
+nav ul li.big-on  {
+    font-family: 'hammersmith_oneregular';
+    font-size: 1.25em;
+    display:inline;
+    width:20%;
+    float:left;
+}
+nav ul li a, nav ul li.big-on a  {
+    font-size: 1.25em;
+    text-decoration:none;
+    color:black;
+}
+#top_nav ul li a:hover -on {
+    color:grey;
+}
+/* POST NAV */
+.post-nav {
+    font-size: 1.25em;
+    border: none;
+    text-decoration:none;
+    color:black;
+    background:none;
+}
+.attachment-nav, .attachment-nav hr  {
+    width:60%;
+    border: none; 
+    background:none;
+}
+/*MIDDLE DIV. CONTAINS SUB NAV, MAIN, CONTENT AND #primary*/
+
+#middle {
+    width:90%;
+    margin: 0 auto;
+    border:5px solid black; 
+    border-radius:15px;
+    background:rgba(255,255,255, 0.45);	
+    overflow: hidden;
+    padding: 20px;
+}
+#content {
+    width: 60%;
+    float:left;
+    padding:2px;
+    clear:both;
+    background: none;
+}
+div#content.archive {
+    background: none;
+}
+.entry {
+    background: none;
+}
+#content p{
+    font-family: 'hammersmith_oneregular';
+    text-align:left;
+    padding:2px;
+    margin: 0 0 10px 0;
+}
+#content h3 {
+    font-family: 'sedgwick_co';
+    font-size: 1.5em;
+}
+
+
+#content.attachment{
+    width:100%;
+    margin:0 auto;
+    text-align: center;
+}
+#content.attachment img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+#content.attachment p{
+    text-align: center;  
+}
+
+.imgright{
+  float: right;
+  margin: .5em 0 .5em;  
+}
+
+#primary.sidebar{
+    width:29%;
+    float:right;
+    font-family: 'carter_oneregular';
+    border-left:2px solid black;
+    text-shadow:#999999 2px 3px 2px;
+    font-size:20px;
+    line-height:30px;
+    padding-left:5%;
+    text-decoration: none;
+}
+#primary.sidebar h3 {
+    font-family: 'sedgwick_co';
+    font-size: 1.25em;
+    padding-top: 2%;
+
+}
+#primary.sidebar textarea {
+    font-family: 'carter_oneregular';
+    width:100%;
+    height:1.45em;
+    background: white;
+    font-size: 14px;
+}
+#primary.sidebar input.search-field  {
+    background:white;
+    font-family: 'carter_oneregular';
+    display: inline-block;   
+    width:100%;
+    font-size: 16px;
+}
+#primary.sidebar span {
+ display:none;   
+}
+#primary.sidebar .search-submit {
+    font-family: 'carter_oneregular';
+    font-size:16px;
+    float:right;
+}
+#primary.sidebar .jetpack-image-container {
+    padding-top: 20px;
+}
+.jetpack-image-container{
+    margin:0 auto;
+}
+#primary.sidebar ul  {
+    text-align:left;
+    font-family: 'carter_oneregular';
+}
+#primary.sidebar ul li  {
+    width:100%;
+    text-align:left;
+    float:right;
+}
+#primary.sidebar ul li  {
+    width:100%;
+    float:right;
+    display:block;
+    text-decoration: none;
+}
+#primary.sidebar ul li a, nav ul li a  {
+    color:black;
+    display:block;
+
+}
+#primary.sidebar ul li a.hover {
+    color:darkslategray;  
+}
+
+#primary.sidebar ul li a, nav ul li.big-on a  {
+    color:black;  
+}
+#primary.sidebar ul li a:hover -on {
+    color:grey;
+    text-decoration: none;
+}
+
+.alignleft, .alignright{
+    font-family: 'carter_oneregular';
+    border:none;
+}
+
+footer {
+    width:80%;
+    margin:0 auto;
+    margin-top: 25px;
+    font-family: 'hammersmith_oneregular';
+    font-size:20px;
+    border:15px thick #F8F8F8;
+    clear:both;
+    line-height:15px;
+    overflow: hidden;
+    text-align: center;
+}
+footer ul  {
+    text-align:center;    	
+}
+footer ul li  {
+    display:inline;
+    width:33.33%;
+    padding: 5px 20px 5px 20px;
+    color:white;
+}
+footer ul li a  {
+		display:inline;
+		padding: 0 50px;
+		color:white;
+}
+
+footer hr  {
+	width:100%;
+	margin:auto;
+}
+footer p{
+ text-align:center;   
+}
+
+/*odds and ends*/
+blockquote {
+    font-family: 'hammersmith_oneregular';
+    font-style: italic;
+	font-size: 1em;
+	margin:1em;
+}
+dl{
+    text-decoration:none;	
+}
+dd{
+    font-family: 'hammersmith_oneregular';
+    font-style: italic;
+	font-size: 1.0em;
+	margin-left:1.25em;  
+}
+
+dt {
+    font-family: 'hammersmith_oneregular';
+	font-size: 1.25em;
+    font-style: oblique;   
+}
+strong {
+    font-family: 'hammersmith_oneregular';
+}
+form.search-form {
+    font-family:  'hammersmith_oneregular';
+}
+
+/*  ---------------  BEGIN WORDPRESS-GENERATED SELECTORS  ---------------  */		
+		
+div.hentry {
+	margin-bottom: 20px;
+}
+
+.alignnone {
+	margin-bottom: 10px;   
+}
+	
+.alignleft {	/* applies to floated images */
+	float: left;
+	margin: 0 10px 10px 0px ;  
+}
+	
+.alignright { 	/* applies to floated images */
+	float: right;
+	margin: 0 0px 10px 10px;  
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto; 
+}
+	
+#previous_image a, 
+#next_image a {
+    width:60%;
+	border-bottom: none;
+}
+.attachment-thumbnail, 
+.size-thumbnail {
+	padding: 5px;
+	border: 1px solid #ddd;
+}
+	
+#gallery-box {
+	margin-bottom: 25px;
+}
+	
+div#comments-box,
+div#respond {
+	clear: both; 	/* clears floated prev/next nav on comments.php template */	
+}
+	
+	
+/* COMMENTS */
+
+#comments-head {
+	border-bottom: 1px solid #ddd;
+}
+
+#comments-box ol,
+#comments-box ul {
+	list-style-type:none;
+	padding-left: 0;
+	margin-left: 0;	
+}
+	
+#comments-box ol li {
+	margin: 10px 0;
+}
+
+#comments-box cite {
+	font-weight:bold;
+	font-size: 13px;
+
+}
+	
+.comment-author {
+    font-size: 1.2em;
+	margin-bottom: 2px;
+
+}
+	
+.comment p {
+	clear:both; 
+}
+
+.reply {
+	font-size:14px;
+}
+	
+.comment-meta {
+	font-size:14px;
+}
+	
+#commentform p {
+	font-size: 16px;
+}
+	
+.avatar {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+	
+#content img.print {
+	float: right;
+	border: none;
+	clear:both;
+	margin-bottom: 20px;  
+}
+		
+#content object { 
+	margin: 0 0 10px 0px ; 
+    
+}
+	
+#content pre {
+	max-height: 300px;
+	font-size: 12px;
+	padding: 10px;
+	margin: 10px 0px;
+	overflow: auto;
+}
+	
+.clear {
+	clear:both;
+}
+				
+/* POST ITEMS */
+.post-box {
+	border-bottom:1px solid #DDDDDD;
+	margin-bottom:30px;
+	padding-bottom:10px;  
+}
+
+.postmetadata {
+	font-size:12px;
+	font-style:italic;  
+}
+
+.read-more {
+	font-style: italic; 
+}
+
+/* GALLERY ITEMS */
+.gallery {
+	margin: auto;
+}
+	
+.gallery-item {
+	margin: 5px 3px 5px 0;
+	text-align: center;
+}
+	
+#content p.smallattachment a, 
+#content dl.gallery-item a {
+	border-bottom: none;
+}
+	
+.gallery img {
+    float: none;
+}
+	
+.gallery-caption {
+	margin-left: 0;
+}
+	
+#content p.wp-caption-text {
+	margin-top: 10px;
+	font-size: 12px;
+}
+.post {
+    align-content: center;   
+}
+		
+/*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */		
+
+
+
+
+
+
+
+
